@@ -1,20 +1,16 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "Website Clone",
-  description: "Pixel-perfect website clone",
+  title: "Pop Site - Free Personal Site Builder & Linktree Alternative",
+  description:
+    "Make a stunning site, easily. Used by 8,000+ people & businesses in 50+ countries. Built-in Analytics, SEO, Forms and more.",
+  icons: {
+    icon: [
+      { url: "/seo/K9dDDIVcr8GTjlz3h0uT98mXA.png" },
+      { url: "/seo/fV7hsyFOx2vHRCHfwTQOKkvUICk.png", sizes: "32x32" },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -23,11 +19,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en" className="h-full antialiased">
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap"
+        />
+      </head>
+      <body className="min-h-full flex flex-col font-sans">{children}</body>
     </html>
   );
 }
